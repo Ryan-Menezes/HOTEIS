@@ -1,0 +1,1 @@
+GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON hoteis.* TO hoteis@localhost IDENTIFIED BY 'hoteis';

@@ -1,0 +1,52 @@
+{
+	"logo": "logo.png",
+	"version": "1.0",
+	"name": "HOTEIS",
+	"site": {
+		"carrossel": {
+			"imgs": [
+				{
+					"img": "fundo.jpg",
+					"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+				},
+				{
+					"img": "fundo2.jpg",
+					"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+				},
+				{
+					"img": "fundo3.jpg",
+					"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+				}
+			]
+		},
+		"imagens": [
+			"img1.jpg",
+			"img2.jpg",
+			"img3.jpg",
+			"img4.jpg"
+		]
+	},
+	"social": {
+		"facebook": "",
+		"instagram": "",
+		"twitter": ""
+	},
+	"address": {
+		"street": "Rua Exemplo",
+		"number": "20",
+		"city": "São Paulo",
+		"district": "Jardim Exemplo",
+		"country_code": "BR",
+		"postal_code": "1234567",
+		"state": "São Paulo",
+		"phone": "11987654321"
+	},
+	"payment": {
+		"email": "example@gmail.com",
+		"firstName": "Nome",
+		"lastName": "Sobrenome",
+		"taxID": "Documento cadastrado no paypal(CPF, RG, etc...)",
+		"country": "BR", 
+		"language": "pt_BR"
+	}
+}

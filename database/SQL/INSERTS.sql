@@ -1,0 +1,1 @@
+INSERT INTO tipos_quarto (nome_tipo) VALUES ('Comum'), ('Luxo');

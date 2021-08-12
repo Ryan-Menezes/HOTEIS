@@ -1,0 +1,23 @@
+{
+    "name": "rmnc/hoteis",
+    "description": "Sistema hoteleiro online em php",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ryan Menezes",
+            "email": "menezesryan1010@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.4",
+        "mpdf/mpdf": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "core\\" : "core/"
+        },
+        "files": [
+            "config.php"
+        ]
+    }
+}

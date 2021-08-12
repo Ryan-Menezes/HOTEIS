@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', arial, sans-serif;
+	outline: none;
+}
+*::-webkit-scrollbar{
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+*::-webkit-scrollbar-thumb{
+	border-radius: 5px;
+	background-color: #7d7d7d;
+}
+html{
+	scroll-behavior: smooth;
+}
+
+/* ESTILO DO MENU */
+
+#header_pagina{
+	height: 450px;
+	padding: 10px;
+	font-size: 14px;	
+	background-size: cover;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	transition-duration: 0.3s;
+}
+#header_pagina #menu{
+	display: flex;
+	justify-content: space-between;
+}
+#header_pagina #menu img{
+	width: 40px;
+	filter: drop-shadow(0px 0px 1px #4f0800);
+}
+#header_pagina #menu nav ul{
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+#header_pagina #menu nav ul li{
+	display: inline-block;
+	color: white;
+	text-shadow: 0px 0px 20px black;
+}
+#header_pagina #menu nav ul li a{
+	color: white;
+	text-decoration: none;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#header_pagina #menu nav ul li a:hover{
+	text-decoration: underline;
+}
+#header_pagina #info{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-shadow: 0px 0px 20px black;
+}
+#header_pagina #info button{
+	height: 100px;
+	border: 1px solid white;
+	color: white;
+	background-color: transparent;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 3px;
+	transition-duration: 0.3s;
+}
+#header_pagina #info button:hover{
+	color: black;
+	background-color: white;
+}
+#header_pagina #info #texto{
+	width: 40%;
+}
+#header_pagina #info #texto p{
+	color: white;
+	text-shadow: 0px 0px 5px #6e6e6e;
+	font-size: 18px;
+}
+#header_pagina #info #reserva{
+	width: 20%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	color: white;
+}
+#header_pagina #info #reserva button{
+	padding: 20px;
+	height: 60px;
+	width: 200px;
+	border: none;
+	background: #ff3f2e;
+	transition-duration: 0.3s;
+	box-shadow: 0px 0px 30px 5px #333333;
+}
+#header_pagina #info #reserva button:hover{
+	color: white;
+	background: #d11d0d;
+}
+#header_pagina #info #reserva h1{
+	font-size: 50px;
+	margin-bottom: 30px;
+}
+
+/* ESTILO DO MENU FIXO */
+
+#menuFixo{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background: #ff3f2e;
+	font-size: 12px;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	display: none;
+	box-shadow: 0px 0px 10px 10px #dbdbdb;
+}
+#menuFixo img{
+	width: 40px;
+	filter: drop-shadow(0px 0px 1px #4f0800);
+}
+#menuFixo nav ul{
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+#menuFixo nav ul li{
+	display: inline-block;
+	color: white;
+	text-shadow: 0px 0px 20px black;
+	font-size: 13px;
+}
+#menuFixo nav ul li a{
+	color: white;
+	text-decoration: none;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#menuFixo nav ul li a:hover{
+	text-decoration: underline;
+}
+
+/* ESTILO DA PÁGINA INICIAL */
+
+#principal{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 90%;
+	margin: auto;
+}
+#principal main{
+	padding-top: 40px;
+	margin-bottom: 40px;
+}
+#principal main h3{
+	padding-left: 10px;
+	border-left: 5px solid #ff3f2e;
+	margin-bottom: 40px;
+}
+#principal #quartos{
+	border: none;
+}
+#principal #quartos #imgQuartos div img{
+	width: 100%;
+	height: 100%;
+}
+#principal #quartos #imgQuartos{
+	display: grid;
+	grid-template-columns: repeat(4, calc(25% - 5px));
+	grid-column-gap: 5px;
+}
+#principal .formulariosSite .formularios{
+	display: grid;
+	grid-template-columns: 500px 1fr;
+	grid-column-gap: 20px;
+}
+#principal .formulariosSite .formularios form{
+	display: flex;
+	flex-direction: column;
+}
+#principal .formulariosSite .formularios form div{
+	display: flex;
+	flex-direction: column;
+}
+#principal .formulariosSite .formularios form .divide{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 5px;
+}
+#principal .formulariosSite .formularios form .gSubmit{
+	display: block;
+}
+#principal .formulariosSite .formularios form input{
+	padding: 8px;
+	border: 1px solid #c9c7c7;
+	margin-bottom: 10px;
+	border-radius: 3px;
+}
+#principal .formulariosSite .formularios form textarea{
+	padding: 8px;
+	height: 100px;
+	border: 1px solid #c9c7c7;
+	border-radius: 3px;
+	resize: none;
+	margin-bottom: 10px;
+}
+#principal .formulariosSite .formularios form a{
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #0569e3;
+}
+#principal .formulariosSite .formularios form a:hover{
+	text-decoration: underline;
+}
+#principal .formulariosSite .formularios form input[type=submit], #principal .formulariosSite .formularios form button[type=submit]{
+	padding: 10px;
+	border: none;
+	background: #ff3f2e;
+	transition-duration: 0.3s;
+	color: white;
+	cursor: pointer;
+	border-radius: 3px;
+	margin-top: 20px;
+}
+#principal .formulariosSite .formularios .containerInfomation{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	box-sizing: border-box;
+	color: white;
+	text-shadow: 0px 0px 10px black;
+}
+#principal .formulariosSite .formularios #imgLoginFundo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#principal .formulariosSite .formularios #imgLoginFundo img{
+	width: 300px;
+}
+#principal .formulariosSite .formularios #imgCadFundo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#principal .formulariosSite .formularios #imgCadFundo img{
+	width: 300px;
+}
+#principal .formulariosSite .formularios #imgContatoFundo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#principal .formulariosSite .formularios #imgContatoFundo img{
+	width: 300px;
+}
+#principal .spanAlerta{
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #f27e50;
+	font-weight: bold;
+	display: none;
+}
+
+/* ESTILO DA CAIXA DE MENSAGEM DOS FORMULÁRIOS */
+
+#principal .formulariosSite .formularios form .msg{
+	padding: 10px;
+}
+
+.msg{
+	padding: 10px;
+	display: grid;
+	display: none;
+	justify-content: space-between;
+	align-items: center;
+	height: auto;
+	color: white;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+.msg .btnFechaMsg{
+	cursor: pointer;
+}
+.sucesso{
+	background-color: #04cc35;
+	border: 1px solid #039627;
+	border-left: 5px solid #039627;
+}
+.erro{
+	background-color: #ff4938;
+	border: 1px solid #cf1200;
+	border-left: 5px solid #cf1200;	
+}
+
+/* ESTILO DA MODAL GENÉRICA DA PÁGINA */
+
+.modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+	justify-content: center;
+	align-items: center;
+	perspective: 1000px;
+	z-index: 99999;
+}
+.modal main{
+	background-color: white;
+	border-radius: 3px;
+	width: 500px;
+	border: 1px solid #d6d6d6;
+	overflow: hidden;
+	box-shadow: 0px 0px 20px 1px #d6d6d6;
+	animation: modal 0.2s linear;
+}
+@keyframes modal{
+	0%{
+		transform: rotateX(90deg);
+		margin-top: -100px;
+	}
+	100%{
+		transform: rotateX(0deg);
+		margin-top: 0px;		
+	}
+}
+.modal main header{
+	padding: 10px;
+	border-bottom: 1px solid #262626;
+	background-color: #262626;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+}
+.modal main header span{
+	cursor: pointer;
+}
+.modal main form, .modal main .informacoes{
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.modal main .informacoes table{
+	border-collapse: collapse;
+	font-size: 12px;
+	text-align: left;
+	table-layout: fixed;
+}
+.modal main .informacoes table img{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 0px;
+}
+.modal main .informacoes table tr th{
+	padding: 5px;
+	border-bottom: 1px solid #dedede;
+}
+.modal main .informacoes table tr td{
+	padding: 5px;
+}
+.modal main .btnsModal{
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding: 10px;
+}
+.modal main .btnsModal form{
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding: 0;
+	width: 90px;
+	border: none;
+}
+.modal main .btnsModal button{
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	color: black;
+	background-color: transparent;
+	border: 1px solid #dedede;
+}
+.modal main .informacoes h5{
+	margin-bottom: 10px;
+}
+.modal main .informacoes p{
+	font-size: 12px;
+}
+.modal main .informacoes p span{
+	font-weight: bolder;
+}
+.modal main form input[type=text], .modal main form select, .modal main form input[type=date], .modal main form input[type=datetime-local], .modal main form input[type=number], .modal main form input[type=email], .modal main form input[type=password]{
+	padding: 8px;
+	border: 1px solid #d6d6d6;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+.modal main form fieldset{
+	padding: 5px;
+	border: 1px solid #d6d6d6;
+	border-radius: 3px;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.modal .contBtnModal{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 15px;	
+}
+.modal .contBtnModal button, .modal .contBtnModal input[type=submit]{
+	padding: 10px;
+	background: #ff3f2e;
+	color: white;
+	border-radius: 3px;
+	border: none;
+	cursor: pointer;
+}
+.modal main form .divide{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 5px;
+}
+.modal main form .divide div{
+	display: flex;
+	flex-direction: column;
+}
+.modal main .divide-flex{
+	display: flex;
+}
+.modal main form h5{
+	margin-bottom: 10px;
+}
+.spanAlerta{
+	margin-bottom: 10px;
+	font-size: 12px;
+	color: #f27e50;
+	font-weight: bold;
+	display: none;
+}
+
+/* ESTILO DA MODAL DE LOADING */
+
+#loading{
+	position: fixed;
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999999999;
+	justify-content: center;
+	align-items: center;
+}
+#loading div{
+	width: 30px;
+	height: 30px;
+	border: 2px solid #c4c4c4;
+	border-left-color: #f27e50;
+	border-radius: 50%;
+	animation: loading 1s linear infinite;
+}
+@keyframes loading{
+	to{transform: rotate(360deg);}
+}
+
+/* FOOTER DA PÁGINA */
+
+#footer_pagina{
+	background-color: #262626;
+	margin-top: 40px;
+	color: white;
+	font-size: 12px;
+}
+#footer_pagina div{
+	border-top: 1px solid #383838;
+	padding: 10px;
+}
+#footer_pagina #informacoes{
+	display: flex;
+}
+#footer_pagina div ul li{
+	display: inline-block;
+}
+#footer_pagina div ul li a{
+	color: white;
+	text-decoration: none;
+}
+#footer_pagina div ul li a:hover{
+	text-decoration: underline;
+}
+#footer_pagina div p{
+	text-align: center;
+}
