@@ -29,8 +29,9 @@ class PaymentController{
 		// Pegando os dados passados e validando-os
 
 		$dados = json_decode(file_get_contents('php://input'));
+		$dadosUser = Store::dadosUsuarioLogado();
 
-		if(!empty($dados->id) && is_numeric($dados->id)):
+		if(!empty($dados->id) && is_numeric($dados->id) && $this->reservas->reservaUsuarioExiste($dados->id, $dadosUser['CPF'])):
 			$total = $this->reservas->totalPagar($dados->id);
 
 			$data = [
@@ -100,11 +101,12 @@ class PaymentController{
 		endif;
 
 		$dados = json_decode(file_get_contents('php://input'));
+		$dadosUser = Store::dadosUsuarioLogado();
 
-		if(empty($dados->payment_id) || empty($dados->payer_id) || empty($dados->reserva_id)):
-			Store::redirect(['a' => 'inicio'], PAINEL);
+		if(!empty($dados->payment_id) && !empty($dados->payer_id) && !empty($dados->reserva_id) && $this->reservas->reservaUsuarioExiste($dados->reserva_id, $dadosUser['CPF'])):
+			echo json_encode(Payment::execute($dados->payment_id, $dados->payer_id));
+		else:
+			echo json_encode(['state' => 'refused']);
 		endif;
-
-		echo json_encode(Payment::execute($dados->payment_id, $dados->payer_id));
 	}
 }
