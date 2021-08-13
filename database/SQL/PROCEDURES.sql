@@ -301,17 +301,17 @@ $$ DELIMITER ;
 -- PROCEDURE QUE IRÁ ADICIONAR UM PAGAMENTO DE UMA RESERVA
 
 DELIMITER $$
-CREATE PROCEDURE add_pagamento(IN valor DECIMAL(10, 2) UNSIGNED, IN status_p VARCHAR(50), IN id_res SMALLINT UNSIGNED)
+CREATE PROCEDURE add_pagamento(IN pay_id VARCHAR(50), IN valor DECIMAL(10, 2) UNSIGNED, IN status_p VARCHAR(50), IN id_res SMALLINT UNSIGNED)
 BEGIN
-    INSERT INTO pagamentos (valor_total, status_pagamento, id_reserva) VALUES (valor, status_p, id_res);
+    INSERT INTO pagamentos (payment_id, valor_total, status_pagamento, id_reserva) VALUES (pay_id, valor, status_p, id_res);
 END
 $$ DELIMITER ;
 
 -- PROCEDURE QUE IRÁ EDITAR O STATUS DE UM PAGAMENTO DE UMA RESERVA
 
 DELIMITER $$
-CREATE PROCEDURE edit_status_pagamento(IN id SMALLINT UNSIGNED, IN status_p VARCHAR(50))
+CREATE PROCEDURE edit_status_pagamento(IN pay_id VARCHAR(50), IN status_p VARCHAR(50))
 BEGIN
-    UPDATE pagamentos SET status_pagamento = status_p WHERE id_pagamento = id LIMIT 1;
+    UPDATE pagamentos SET status_pagamento = status_p WHERE payment_id = pay_id LIMIT 1;
 END
 $$ DELIMITER ;

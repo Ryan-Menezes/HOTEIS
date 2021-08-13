@@ -5,9 +5,11 @@ namespace core\controllers;
 use core\classes\Store;
 use core\classes\Payment;
 use core\models\Reservas;
+use core\models\Pagamentos;
 
 class PaymentController{
 	private $reservas;
+	private $pagamentos;
 
 	public function __construct(){
 		// Verificando se existe alguém logado
@@ -17,6 +19,7 @@ class PaymentController{
 		endif;
 
 		$this->reservas = new Reservas();
+		$this->pagamentos = new Pagamentos();
 	}
 
 	public function payment_invoice(){
@@ -104,9 +107,23 @@ class PaymentController{
 		$dadosUser = Store::dadosUsuarioLogado();
 
 		if(!empty($dados->payment_id) && !empty($dados->payer_id) && !empty($dados->reserva_id) && $this->reservas->reservaUsuarioExiste($dados->reserva_id, $dadosUser['CPF'])):
-			echo json_encode(Payment::execute($dados->payment_id, $dados->payer_id));
+			$result = Payment::execute($dados->payment_id, $dados->payer_id);
+
+			if($result->state == 'approved' && $this->pagamentos->addPagamento($dados->payment_id, $result->transactions[0]->amount->total, $result->state, $dados->reserva_id)):
+				echo json_encode($result);
+			else:
+				echo json_encode(['state' => 'refused']);
+			endif;
 		else:
 			echo json_encode(['state' => 'refused']);
 		endif;
+	}
+
+	public function payment_notification_receive(){
+		$dados = json_decode(file_get_contents('php://input'));
+
+		$f = fopen('not.txt', 'w');
+		fwrite($f, var_export($f, true));
+		fclose($f);
 	}
 }

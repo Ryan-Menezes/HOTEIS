@@ -61,6 +61,7 @@ define('ROTAS', [
 
 	'payment_invoice' => 'payment@payment_invoice',
 	'payment_execute' => 'payment@payment_execute',
+	'payment_notification_receive' => 'payment@payment_notification_receive',
 
 	// Sistema
 

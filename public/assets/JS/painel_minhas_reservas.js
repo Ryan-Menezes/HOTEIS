@@ -109,13 +109,15 @@ function loadingCarregaSolicitacoesReservas(form){
 
 // FUNÇÕES PARA CARREGAR AS RESERVAS DO USUÁRIO
 
+let loadingR = loading.cloneNode(true)
+
 // Função carrega as reservas
 
 function carregaReservas(form, html, res){
 	let container = window.document.getElementsByClassName('containerReservas')[0]
 
 	form.remove()
-	loading.remove()
+	loadingR.remove()
 
 	container.innerHTML += res
 }
@@ -125,7 +127,7 @@ function carregaReservas(form, html, res){
 function loadingCarregaReservas(form){
 	let container = window.document.getElementsByClassName('containerReservas')[0]
 
-	container.appendChild(loading)
+	container.appendChild(loadingR)
 }
 
 // FUNÇÕES PARA FINALIZAR UMA RESERVA
