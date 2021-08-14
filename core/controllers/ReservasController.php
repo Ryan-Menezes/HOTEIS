@@ -409,7 +409,7 @@ class ReservasController{
 
 		if(!empty($pedidos)):
 			foreach($pedidos as $pedido):
-				$btn = ($pedido->status[0] == 'P') ? '<button type="submit" onclick="cancelarSolicitcao(' . $pedido->id_pedido_reserva . ')">Cancelar solicitação <i class="fas fa-ban"></i></button>' : '<button type="submit" title="Deletar" onclick="cancelarSolicitcao(' . $pedido->id_pedido_reserva . ')"><i class="fas fa-trash-alt"></i></button>';
+				$btn = ($pedido->status[0] == 'P') ? '<button type="submit" onclick="cancelarSolicitcao(' . $pedido->id_pedido_reserva . ')">Cancelar solicitação <i class="fas fa-ban"></i></button>' : '<button type="submit" title="Deletar" onclick="deletaSolicitacao(' . $pedido->id_pedido_reserva . ')"><i class="fas fa-trash-alt"></i></button>';
 
 				$html .= '<div class="cardQuarto" id="card' . $pedido->id_pedido_reserva . '">
 							<div class="headerCardQuarto">Quarto - ' . $pedido->numero_quarto . '</div>

@@ -492,15 +492,19 @@ html{
 	color: white;
 	font-size: 12px;
 }
-#footer_pagina div{
+#footer_pagina .destaque{
 	border-top: 1px solid #383838;
 	padding: 10px;
 }
 #footer_pagina #informacoes{
 	display: flex;
+	justify-content: space-around;
+}
+#footer_pagina #informacoes h4{
+	margin-bottom: 10px;
 }
 #footer_pagina div ul li{
-	display: inline-block;
+	display: block;
 }
 #footer_pagina div ul li a{
 	color: white;

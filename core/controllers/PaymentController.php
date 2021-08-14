@@ -109,7 +109,7 @@ class PaymentController{
 		if(!empty($dados->payment_id) && !empty($dados->payer_id) && !empty($dados->reserva_id) && $this->reservas->reservaUsuarioExiste($dados->reserva_id, $dadosUser['CPF'])):
 			$result = Payment::execute($dados->payment_id, $dados->payer_id);
 
-			if($result->state == 'approved' && $this->pagamentos->addPagamento($dados->payment_id, $result->transactions[0]->amount->total, $result->state, $dados->reserva_id)):
+			if($result->state == 'approved' && $this->reservas->editaStatusReserva($dados->reserva_id, 'C') && $this->pagamentos->addPagamento($dados->payment_id, $result->transactions[0]->amount->total, $result->state, $dados->reserva_id)):
 				echo json_encode($result);
 			else:
 				echo json_encode(['state' => 'refused']);

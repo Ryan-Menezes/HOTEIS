@@ -15,7 +15,8 @@ class MainController{
 		$dados = [
 			'titulo' => 'Início',
 			'logado' => Store::logado(),
-			'imgs' => $config->getConfig()->site->imagens
+			'imgs' => $config->getConfig()->site->imagens,
+			'phone' => Store::mask('(##)#####-####', ADDRESS_PHONE)
 		];
 
 		Store::layout([

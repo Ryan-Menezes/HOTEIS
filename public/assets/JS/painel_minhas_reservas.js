@@ -26,6 +26,14 @@ window.onload = () => {
 		executaFormCarrega(cancelaSolicitacaoReserva, loadingCancelaSolicitacaoReserva, null)
 	})
 
+	// Adicionando um evento ao botão de deletar da modal
+
+	formulario = window.document.getElementById('formDeleta')
+
+	formulario.addEventListener('submit', function(){
+		executaFormCarrega(deletaSolicitacaoReserva, loadingCancelaSolicitacaoReserva, null)
+	})
+
 	// Adicionando um evento ao primeiro formulário que carrega as reservas solicitadas
 
 	formulario = window.document.getElementById('formCarrega')
@@ -84,6 +92,36 @@ function cancelaSolicitacaoReserva(form, html, res){
 function loadingCancelaSolicitacaoReserva(form){
 	form.innerHTML = ''
 	form.appendChild(loading)
+}
+
+// FUNÇÕES PARA A REMOÇÃO DE UMA SOLICITAÇÃO DE RESERVA
+
+// Função que pergunta ao usuário se ele realmente deseja deletar a solicitação selecionada
+
+function deletaSolicitacao(id){
+	let modal = window.document.getElementById('modalDeletaSolicitacao')
+	let input = window.document.getElementById('id_pedido_reserva_del')
+
+	if(id !== null){
+		input.value = id
+		modal.style.display = 'flex'
+	}else{
+		input.value = ''
+		modal.style.display = 'none'
+	}
+}
+
+// Função que recebe e apresenta o resultado da remoção
+
+function deletaSolicitacaoReserva(form, html, res){
+	let container = window.document.getElementById('msgFixo')
+
+	form.innerHTML = html
+
+	container.innerHTML = JSON.parse(res).MSG
+	container.style.display = 'inline-block'
+
+	deletaSolicitacao(null)
 }
 
 // FUNÇÕES PARA CARREGAMENTO DAS SOLICITAÇÕES DE RESERVA

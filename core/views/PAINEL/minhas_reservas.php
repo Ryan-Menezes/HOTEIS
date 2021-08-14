@@ -26,12 +26,26 @@
 <section class="modal" id="modalCancelarSolicitacao">
 	<main class="deletar">
 		<form method="POST" id="formCancela" action="?a=cancela_solicitacao_reserva">
-			<h4>Opa!, Você realamente deseja cancelar este pedido?</h4><br>
+			<h4>Opa!, Você realmente deseja cancelar este pedido?</h4><br>
 			<input type="hidden" name="id_pedido_reserva" id="id_pedido_reserva">
 
 			<div>
 				<button class="cancelar" type="button" onclick="cancelarSolicitcao(null)">Cancelar</button>
 				<button type="submit">Sim!, Quero cancelar</button>
+			</div>
+		</form>
+	</main>
+</section>
+
+<section class="modal" id="modalDeletaSolicitacao">
+	<main class="deletar">
+		<form method="POST" id="formDeleta" action="?a=cancela_solicitacao_reserva">
+			<h4>Opa!, Você realmente deseja deletar este pedido?</h4><br>
+			<input type="hidden" name="id_pedido_reserva" id="id_pedido_reserva_del">
+
+			<div>
+				<button class="cancelar" type="button" onclick="deletaSolicitacao(null)">Cancelar</button>
+				<button type="submit">Sim!, Quero deletar</button>
 			</div>
 		</form>
 	</main>

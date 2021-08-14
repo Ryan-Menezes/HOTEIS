@@ -39,7 +39,8 @@
 		"country_code": "BR",
 		"postal_code": "1234567",
 		"state": "São Paulo",
-		"phone": "11987654321"
+		"phone": "11987654321",
+		"email": "hoteis@gmail.com"
 	},
 	"payment": {
 		"email": "example@gmail.com",

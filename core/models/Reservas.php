@@ -49,6 +49,15 @@ class Reservas{
 		]);
 	}
 
+	// MÉTODO QUE EDITA O STATUS DE UMA RESERVA
+
+	public function editaStatusReserva(int $id, $status) : bool{
+		return Database::EXECUTE_NON_QUERY('CALL edit_status_reserva(:id, :status)', [
+			':id' => $id,
+			':status' => $status
+		]);
+	}
+
 	// MÉTODO QUE VERIFICA SE HÁ UMA SOLICITAÇÃO DE RESERVA FEITA PARA UM USUÁRIO
 
 	public function solicitaReservaExiste(int $num, $cpf) : bool{
