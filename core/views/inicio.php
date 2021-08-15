@@ -31,9 +31,9 @@
 		</div>
 	</main>
 	<main id="login" class="formulariosSite" data-ajax="false">
-		<div class="formularios">
+		<div class="formularios backLeft fundo-two">
 			<div class="containerInfomation" id="imgLoginFundo">
-				<img src="https://d160p8tq559394.cloudfront.net/images/login/login-form-img.png">
+				<img src="../public/assets/IMGS/login.png">
 			</div>
 			<form id="formLogin" method="POST" action="?a=login">
 				<h3>Login:</h3>
@@ -59,7 +59,7 @@
 	</main>
 
 	<main id="cadastro" class="formulariosSite">
-		<div class="formularios" style="grid-template-columns: 1fr 500px;">
+		<div class="formularios backRight fundo-three" style="grid-template-columns: 1fr 500px;">
 			<form id="formCad" method="POST" action="?a=cadastro" data-ajax="true">
 				<h3>Cadastrar-se</h3>
 
@@ -101,15 +101,15 @@
 				<div class="gSubmit"><input type="submit" value="Cadastrar-se"></div>
 			</form>
 			<div id="imgCadFundo">
-				<img src="https://aiglobaldevelopers.com/images/user/login.png">
+				<img src="../public/assets/IMGS/cadastro.png">
 			</div>
 		</div>
 	</main>
 
 	<main id="contatos" class="formulariosSite">
-		<div class="formularios" id="containerForm">
+		<div class="formularios backLeft fundo-one" id="containerForm">
 			<div id="imgContatoFundo">
-				<img src="https://www.ouriginal.com/wp-content/uploads/2021/01/Ouriginal_Header_Element-1.png">
+				<img src="../public/assets/IMGS/contato.png">
 			</div>
 			<form method="POST" action="?a=contato" data-ajax="true">
 				<h3>Contate-nos:</h3>

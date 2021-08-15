@@ -7,10 +7,12 @@
 	async function checkout(id){
 		fechaModais()
 		window.document.getElementById('modalPayment').style.display = 'flex'
+		window.document.getElementById('btnPagarReserva').style.display = 'none'
 
 		id_reserva = id
 
 		container = window.document.getElementById('ppplus')
+		container.style.height = 'auto'
 		container.innerHTML = '<div class="loading"></div>'
 
 		let respPayment = await fetch('?a=payment_invoice', {
