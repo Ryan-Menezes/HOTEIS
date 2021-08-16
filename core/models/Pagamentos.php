@@ -17,4 +17,14 @@ class Pagamentos{
 	public function editStatusPagamento($payment_id, $status) : bool{
 		return Database::EXECUTE_NON_QUERY('CALL edit_status_pagamento(:pay_id, :status)', [':pay_id' => $payment_id, ':status' => $status]);
 	}
+
+	// MÉTODO QUE RETORNA OS DADOS DE UM PAGAMENTO
+
+	public function buscaPagamento($payment_id) : ?object{
+		$dados = Database::EXECUTE_QUERY('SELECT * FROM pagamentos WHERE payment_id = :pay_id LIMIT 1', [':pay_id' => $payment_id]);
+
+		if(empty($dados)) return null;
+
+		return $dados[0];
+	}
 }

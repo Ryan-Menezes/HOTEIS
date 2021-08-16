@@ -122,8 +122,23 @@ class PaymentController{
 	public function payment_notification_receive(){
 		$dados = json_decode(file_get_contents('php://input'));
 
-		$f = fopen('not.txt', 'w');
-		fwrite($f, var_export($f, true));
-		fclose($f);
+		$status = [
+			'PAYMENT.AUTHORIZATION.CREATED' => 'C',
+			'PAYMENT.AUTHORIZATION.VOIDED' => 'P',
+			'PAYMENT.CAPTURE.COMPLETED' => 'C',
+			'PAYMENT.CAPTURE.DENIED' => 'P',
+			'PAYMENT.CAPTURE.PENDING' => 'P',
+			'PAYMENT.CAPTURE.REFUNDED' => 'C',
+			'PAYMENT.CAPTURE.REVERSED' => 'P'
+		];
+
+		if(array_key_exists($dados->event_type, $dados)):
+			$pagamento = $this->pagamentos->buscaPagamento($dados->resource->parent_payment);
+
+			if(!is_null($pagamento)):
+				$this->pagamentos->editStatusPagamento($dados->resource->parent_payment, $dados->event_type);
+				$this->reservas->editaStatusReserva($pagamento->id_reserva, $status[$dados->resource->parent_payment]);
+			endif;
+		endif;
 	}
 }
