@@ -137,6 +137,6 @@
 	</main>
 </section>
 
-<script type="text/javascript" src="../public/assets/JS/libs/jquery.js"></script>
-<script type="text/javascript" src="../public/assets/JS/genericos.js"></script>
-<script type="text/javascript" src="../public/assets/JS/main_inicio.js"></script>
+<script type="text/javascript" src="../public/assets/JS/libs/jquery.js" defer></script>
+<script type="text/javascript" src="../public/assets/JS/genericos.js" defer></script>
+<script type="text/javascript" src="../public/assets/JS/main_inicio.js" defer></script>

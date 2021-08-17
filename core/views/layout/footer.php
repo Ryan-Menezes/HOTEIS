@@ -13,8 +13,7 @@
 			<h4>Endereço:</h4>
 			<ul>
 				<li><i class="fas fa-location-arrow"></i> <?= $postal_code ?></li>
-				<li><i class="fas fa-map-marked-alt"></i> <?= ADDRESS_STREET ?> - <?= ADDRESS_NUMBER ?>, <?= ADDRESS_DISTRICT ?>, <?= ADDRESS_CITY ?></li>
-				<li><i class="fas fa-map-marker-alt"></i> <?= ADDRESS_COUNTRY_CODE ?> - <?= ADDRESS_STATE ?></li>
+				<li><i class="fas fa-map-marked-alt"></i> <?= ADDRESS_COUNTRY_CODE ?> - <?= ADDRESS_STREET ?> - <?= ADDRESS_NUMBER ?>, <?= ADDRESS_DISTRICT ?>, <?= ADDRESS_CITY ?> - <?= ADDRESS_STATE['sigla'] ?></li>
 			</ul>
 		</div>
 

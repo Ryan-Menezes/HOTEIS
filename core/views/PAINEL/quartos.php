@@ -1,4 +1,4 @@
-<section class="modal" id="modalDeletaQuarto">
+ defer<section class="modal" id="modalDeletaQuarto">
 	<main class="deletar">
 		<form method="POST" id="formDeleta" action="?a=deleta_quarto">
 			<h4>Opa!, Você realamente deseja deletar este quarto?</h4><br>
@@ -150,7 +150,7 @@
 
 <section id="msgFixo"></section>
 
-<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/genericos.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_quartos.js"></script>
+<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/genericos.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_quartos.js" defer></script>

@@ -115,7 +115,56 @@
 	<details>
 		<summary>Site</summary>
 		<article>
-			<main class="containerConf" style="grid-column: 1/3">
+			<main class="containerConf">
+				<header class="headerConf">
+					<h5>Endereço do hotel:</h5>
+				</header>
+				<form method="POST" action="?a=alterar_endereco" class="formularioExecuta mainConf" data-edit="true">
+					<div class="msg">
+						<p class="textMsg"></p>
+						<p class="btnFechaMsg" onclick="fechaMensagem(this.parentNode)">&times;</p>
+					</div>
+
+					<h5>CEP:</h5>
+					<input type="text" name="cep" id="cep" placeholder="CEP" class="inputsForm" maxlength="8" value="<?= $config->address->postal_code ?>">
+					<span class="spanAlerta">Por favor digíte o cep do hotel</span>
+
+					<div class="divide">
+						<div>
+							<h5>Logradouro:</h5>
+							<input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" class="inputsForm" value="<?= $config->address->street ?>">
+							<span class="spanAlerta">Por favor digíte o logradouro do hotel</span>
+						</div>
+
+						<div>
+							<h5>Número:</h5>
+							<input type="number" name="numero" id="numero" placeholder="Número" class="inputsForm" value="<?= $config->address->number ?>">
+							<span class="spanAlerta">Por favor digíte o número do hotel</span>
+						</div>
+					</div>	
+
+					<h5>Bairro:</h5>
+					<input type="text" name="bairro" id="bairro" placeholder="Bairro" class="inputsForm" value="<?= $config->address->district ?>">
+					<span class="spanAlerta">Por favor digíte o bairro do hotel</span>
+
+					<div class="divide">
+						<div>
+							<h5>Estado:</h5>
+							<select name="estado" id="estado"></select>
+						</div>
+
+						<div>
+							<h5>Cidade:</h5>
+							<select name="cidade" id="cidade"></select>
+						</div>
+					</div>
+					
+					<div class="inp">
+						<input type="submit" value="Salvar Alterações">
+					</div>
+				</form>
+			</main>
+			<main class="containerConf">
 				<header class="headerConf">
 					<h5>Redes Sociais</h5>
 				</header>
@@ -170,6 +219,7 @@
 						<p class="btnFechaMsg" onclick="fechaMensagem(this.parentNode)">&times;</p>
 					</div>
 
+					<h5>Nome do Sistema:</h5>
 					<input type="text" name="nome" class="inputsForm" placeholder="Nome do Site" value="<?= $config->name ?>">
 					<span class="spanAlerta">Por favor digíte o novo nome do sistema</span>
 					
@@ -262,7 +312,7 @@
 
 <section id="msgFixo"></section>
 
-<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/genericos.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_configuracoes.js"></script>
+<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/genericos.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_configuracoes.js" defer></script>

@@ -34,7 +34,7 @@ define('ADDRESS_CITY', $CONFIG->address->city);
 define('ADDRESS_DISTRICT', $CONFIG->address->district);
 define('ADDRESS_COUNTRY_CODE', $CONFIG->address->country_code);
 define('ADDRESS_POSTAL_CODE', $CONFIG->address->postal_code);
-define('ADDRESS_STATE', $CONFIG->address->state);
+define('ADDRESS_STATE', json_decode(json_encode($CONFIG->address->state), true));
 define('ADDRESS_PHONE', $CONFIG->address->phone);
 define('ADDRESS_EMAIL', $CONFIG->address->email);
 

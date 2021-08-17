@@ -33,7 +33,7 @@
 
 <section id="msgFixo"></section>
 
-<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/genericos.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_reservas_solicitadas.js"></script>
+<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/genericos.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_reservas_solicitadas.js" defer></script>

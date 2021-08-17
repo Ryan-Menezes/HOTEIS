@@ -68,7 +68,7 @@ class PaymentController{
 								'city' => ADDRESS_CITY,
 								'country_code' => ADDRESS_COUNTRY_CODE,
 								'postal_code' => ADDRESS_POSTAL_CODE,
-								'state' => ADDRESS_STATE,
+								'state' => ADDRESS_STATE['name'],
 								'phone' => ADDRESS_PHONE
 							],
 							'items' => [

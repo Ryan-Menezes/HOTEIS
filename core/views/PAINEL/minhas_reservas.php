@@ -1,4 +1,4 @@
-<section class="modal" id="modalPayment">
+ defer<section class="modal" id="modalPayment">
 	<main>
 		<header>
 			<h5><?= APP_NAME ?> - Pagamento</h5>
@@ -73,9 +73,9 @@
 
 <section id="msgFixo"></section>
 
-<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/libs/ppplusdcc.min.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/genericos.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/payment.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_minhas_reservas.js"></script>
+<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/libs/ppplusdcc.min.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/genericos.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/payment.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_minhas_reservas.js" defer></script>

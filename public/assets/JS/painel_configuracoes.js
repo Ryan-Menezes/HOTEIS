@@ -44,6 +44,15 @@ window.onload = () => {
 
 		destaque.addEventListener('change', imgPreview)
 	}
+
+	// Evento para carregar os estados e cidades do Brasil
+
+	window.document.getElementById('estado').addEventListener('change', () => loadCidadeEstado(event.target.value.trim().split('-')[1]))
+	loadCidadeEstado('SP', 'São Paulo')
+
+	// Evento para carregar um endereço atravéz de um cep
+
+	window.document.getElementById('cep').addEventListener('change', () => loadAddress(event.target.value.trim()))
 }
 
 function inputAddImg(){
@@ -134,4 +143,67 @@ function removeImg(index){
 	window.document.getElementById('removidos').value = removidos.join()
 
 	if(inp.dataset.add !== "true") inp.parentNode.remove()
+}
+
+function loadAddress(cep){
+	if(cep.length === 8){
+		let xmlhttp
+
+		if(window.XMLHttpRequest) xmlhttp = new XMLHttpRequest()
+		else xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
+
+		xmlhttp.onreadystatechange = function(){
+			if(this.readyState === 4 && this.status === 200){
+				let json = JSON.parse(this.responseText)
+
+				if(!json.erro){
+					window.document.getElementById('logradouro').value = json.logradouro
+					window.document.getElementById('bairro').value = json.bairro
+					loadCidadeEstado(json.uf, json.localidade)
+				}
+			}
+		}
+
+		xmlhttp.open('GET', `https://viacep.com.br/ws/${cep}/json/`, true)
+		xmlhttp.send()
+	}
+}
+
+function loadCidadeEstado(estadoAtual, cidadeAtual){
+	let xmlhttp
+
+	if(window.XMLHttpRequest) xmlhttp = new XMLHttpRequest()
+	else xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
+
+	xmlhttp.onreadystatechange = function(){
+		if(this.readyState === 4 && this.status === 200){
+			let json = JSON.parse(this.responseText)
+			let estadosEle = window.document.getElementById('estado')
+			let cidadesEle = window.document.getElementById('cidade')
+			let cidadesHTML, estadosHTML
+
+			for(let estado of json.estados){
+				if(estado){
+					if(estado.sigla === estadoAtual || estado.name === estadoAtual){
+						estadosHTML += `<option value="${estado.nome}-${estado.sigla}" selected>${estado.nome}</option>`
+
+						for(let cidade of estado.cidades){
+							if(cidade){
+								if(cidadeAtual && cidade === cidadeAtual) cidadesHTML += `<option value="${cidade}" selected>${cidade}</option>`
+								else cidadesHTML += `<option value="${cidade}">${cidade}</option>`
+							}
+						}
+					}else{
+						estadosHTML += `<option value="${estado.nome}-${estado.sigla}">${estado.nome}</option>`
+					}
+				}
+			}
+
+			estadosEle.innerHTML = estadosHTML
+			cidadesEle.innerHTML = cidadesHTML
+		}
+	}
+
+	xmlhttp.open('GET', '../assets/JS/json/estados-cidades.json', true)
+	xmlhttp.send()
 }

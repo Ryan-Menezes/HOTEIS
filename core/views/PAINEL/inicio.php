@@ -1,4 +1,4 @@
-<section class="modal" id="modalSolicita">
+ defer<section class="modal" id="modalSolicita">
 	<main>
 		<header>
 			<h5><?= APP_NAME ?> - Solicitar Reserva</h5>
@@ -126,12 +126,12 @@
 
 <section id="msgFixo"></section>
 
-<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/genericos.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js"></script>
+<script type="text/javascript" src="../../public/assets/JS/libs/jquery.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/genericos.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_notificacao.js" defer></script>
 <?php if($dadosUser['ACESSO'] === 'C'): ?> 
-<script type="text/javascript" src="../../public/assets/JS/painel_inicio.js"></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_inicio.js" defer></script>
 <?php else: ?>
-<script type="text/javascript" src="../../public/assets/JS/libs/apexcharts.js"></script>
-<script type="text/javascript" src="../../public/assets/JS/painel_inicio_admin.js"></script>
+<script type="text/javascript" src="../../public/assets/JS/libs/apexcharts.js" defer></script>
+<script type="text/javascript" src="../../public/assets/JS/painel_inicio_admin.js" defer></script>
 <?php endif; ?>

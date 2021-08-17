@@ -928,7 +928,16 @@ html{
 #configuracoes .containerConf .mainConf h5{
 	margin-bottom: 5px;
 }
-#configuracoes .containerConf .mainConf input, #configuracoes .containerConf .mainConf button{
+#configuracoes .containerConf .mainConf .divide{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 10px;
+}
+#configuracoes .containerConf .mainConf .divide div{
+	display: flex;
+	flex-direction: column;
+}
+#configuracoes .containerConf .mainConf input, #configuracoes .containerConf .mainConf select, #configuracoes .containerConf .mainConf button{
 	padding: 8px;
 	border: 1px solid #d6d6d6;
 	border-radius: 3px;

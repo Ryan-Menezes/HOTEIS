@@ -118,10 +118,10 @@
 	</form>
 </section>
 
-<script type="text/javascript" src="../public/assets/JS/libs/jquery.js"></script>
-<script type="text/javascript" src="../public/assets/JS/genericos.js"></script>
+<script type="text/javascript" src="../public/assets/JS/libs/jquery.js" defer></script>
+<script type="text/javascript" src="../public/assets/JS/genericos.js" defer></script>
 
-<script type="text/javascript">
+<script type="text/javascript" defer>
 	window.onload = () => {
 		let forms = window.document.getElementsByClassName('formularioExecuta')
 
