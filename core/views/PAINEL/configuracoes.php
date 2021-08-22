@@ -138,7 +138,7 @@
 
 						<div>
 							<h5>Número:</h5>
-							<input type="number" name="numero" id="numero" placeholder="Número" class="inputsForm" value="<?= $config->address->number ?>">
+							<input type="text" name="numero" id="numero" placeholder="Número" class="inputsForm" value="<?= $config->address->number ?>">
 							<span class="spanAlerta">Por favor digíte o número do hotel</span>
 						</div>
 					</div>	
@@ -175,13 +175,13 @@
 					</div>
 
 					<h5>Facebook:</h5>
-					<input type="text" name="facebook" placeholder="Facebook" value="<?= $config->social->facebook ?>">
+					<input type="url" name="facebook" placeholder="Facebook" value="<?= $config->social->facebook ?>">
 
 					<h5>Instagram:</h5>
-					<input type="text" name="instagram" placeholder="Instagram" value="<?= $config->social->instagram ?>">
+					<input type="url" name="instagram" placeholder="Instagram" value="<?= $config->social->instagram ?>">
 
 					<h5>Twitter:</h5>
-					<input type="text" name="twitter" placeholder="Twitter" value="<?= $config->social->twitter ?>">
+					<input type="url" name="twitter" placeholder="Twitter" value="<?= $config->social->twitter ?>">
 					
 					<div class="inp">
 						<input type="submit" value="Salvar Alterações">

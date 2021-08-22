@@ -4,10 +4,10 @@
 
 		<nav>
 			<ul>
-				<li><a href="#header_pagina">Fazer uma reserva</a>|</li>
-				<li><a href="#contatos">Contate-nos</a>|</li>
-				<li><a href="#login">Entrar</a>|</li>
-				<li><a href="#cadastro">Cadastrar-se</a></li>
+				<li><a href="#header_pagina"><i class="fas fa-concierge-bell"></i> Fazer uma reserva</a>|</li>
+				<li><a href="#contatos"><i class="fas fa-phone-alt"></i> Contate-nos</a>|</li>
+				<li><a href="#login"><i class="fas fa-sign-in-alt"></i> Entrar</a>|</li>
+				<li><a href="#cadastro"><i class="fas fa-user"></i> Cadastrar-se</a></li>
 			</ul>
 		</nav>
 	</main>
@@ -37,10 +37,10 @@
 
 	<nav>
 		<ul>
-			<li><a href="#header_pagina">Fazer uma reserva</a>|</li>
-			<li><a href="#contatos">Contate-nos</a>|</li>
-			<li><a href="#login">Entrar</a>|</li>
-			<li><a href="#cadastro">Cadastrar-se</a></li>
+			<li><a href="#header_pagina"><i class="fas fa-concierge-bell"></i> Fazer uma reserva</a>|</li>
+			<li><a href="#contatos"><i class="fas fa-phone-alt"></i> Contate-nos</a>|</li>
+			<li><a href="#login"><i class="fas fa-sign-in-alt"></i> Entrar</a>|</li>
+			<li><a href="#cadastro"><i class="fas fa-user"></i> Cadastrar-se</a></li>
 		</ul>
 	</nav>
 </main>

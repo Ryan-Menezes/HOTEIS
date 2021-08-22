@@ -49,6 +49,7 @@ define('ROTAS', [
 	'alterar_logo_sistema' => 'configuracoes@alterar_logo_sistema',
 	'alterar_imgs_destaque_sistema' => 'configuracoes@alterar_imgs_destaque_sistema',
 	'alterar_carrossel_sistema' => 'configuracoes@alterar_carrossel_sistema',
+	'alterar_endereco' => 'configuracoes@alterar_endereco',
 	'get_payment_config' => 'configuracoes@get_payment_config',
 
 	// Notificações

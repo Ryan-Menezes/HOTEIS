@@ -1,4 +1,4 @@
- defer<section class="modal" id="modalSolicita">
+<section class="modal" id="modalSolicita">
 	<main>
 		<header>
 			<h5><?= APP_NAME ?> - Solicitar Reserva</h5>

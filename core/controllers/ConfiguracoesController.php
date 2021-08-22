@@ -60,21 +60,29 @@ class ConfiguracoesController{
 		$msg = 'Não foi possível alterar suas redes sociais, ';
 		$camposErrados = array();
 
-		$facebook = trim(addslashes(filter_input(INPUT_POST, 'facebook', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$instagram = trim(addslashes(filter_input(INPUT_POST, 'instagram', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$twitter = trim(addslashes(filter_input(INPUT_POST, 'twitter', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$facebook = trim(addslashes(filter_input(INPUT_POST, 'facebook', FILTER_SANITIZE_URL)));
+		$instagram = trim(addslashes(filter_input(INPUT_POST, 'instagram', FILTER_SANITIZE_URL)));
+		$twitter = trim(addslashes(filter_input(INPUT_POST, 'twitter', FILTER_SANITIZE_URL)));
+
+		if(!filter_var($facebook, FILTER_VALIDATE_URL)) array_push($camposErrados, 'FACEBOOK');
+		if(!filter_var($instagram, FILTER_VALIDATE_URL)) array_push($camposErrados, 'INSTAGRAM');
+		if(!filter_var($twitter, FILTER_VALIDATE_URL)) array_push($camposErrados, 'TWITTER');
 
 		try{
-			$config = $this->config->getConfig();
+			if(empty($camposErrados)):
+				$config = $this->config->getConfig();
 
-			$config->social->facebook = $facebook;
-			$config->social->instagram = $instagram;
-			$config->social->twitter = $twitter;
+				$config->social->facebook = $facebook;
+				$config->social->instagram = $instagram;
+				$config->social->twitter = $twitter;
 
-			if($this->config->setConfig($config)):
-				echo json_encode(['RES' => true, 'MSG' => 'Redes sociais alterardas com sucesso!']);
+				if($this->config->setConfig($config)):
+					echo json_encode(['RES' => true, 'MSG' => 'Redes sociais alterardas com sucesso!']);
+				else:
+					echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
+				endif;
 			else:
-				echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
+				echo json_encode(['RES' => false, 'MSG' => $msg . 'Os seguintes campos estão incorretos: ' . implode(', ', $camposErrados)]);
 			endif;
 		}catch(Exception $e){
 			echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
@@ -423,6 +431,63 @@ class ConfiguracoesController{
 				echo json_encode(['RES' => true, 'MSG' => 'Imagens de destaque do sistema alteradas com sucessso!']);
 			else:
 				echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
+			endif;
+		}catch(Exception $e){
+			echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
+		}
+	}
+
+	public function alterar_endereco(){
+		// Verificando se o usuário logado é um administrador
+
+		$dadosUser = Store::dadosUsuarioLogado();
+
+		if($dadosUser['ACESSO'] !== 'A'):
+			Store::redirect(['a' => 'inicio'], PAINEL);
+		endif;
+
+		// Verificando se houve uma requisição POST
+
+		if($_SERVER['REQUEST_METHOD'] !== 'POST'):
+			Store::redirect(['a' => 'inicio'], PAINEL);
+		endif;
+
+		$msg = 'Não foi possível alterar o endereço, ';
+		$camposErrados = array();
+
+		$cep = trim(addslashes(filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$logradouro = trim(addslashes(filter_input(INPUT_POST, 'logradouro', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$numero = strtoupper(trim(addslashes(filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS))));
+		$bairro = trim(addslashes(filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$cidade = trim(addslashes(filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$estado = explode('-', trim(addslashes(filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_SPECIAL_CHARS))));
+
+		if(strlen($cep) !== 8) array_push($camposErrados, 'CEP');
+		if(empty($logradouro)) array_push($camposErrados, 'LOGRADOURO');
+		if(strlen($numero) == 0) array_push($camposErrados, 'NÚMERO');
+		if(empty($bairro)) array_push($camposErrados, 'BAIRRO');
+		if(empty($cidade)) array_push($camposErrados, 'CIDADE');
+		if(empty($estado) || count($estado) !== 2) array_push($camposErrados, 'ESTADO');
+
+		try{
+			if(empty($camposErrados)):
+				$config = $this->config->getConfig();
+
+				$config->address->street = $logradouro;
+				$config->address->number = $numero;
+				$config->address->district = $bairro;
+				$config->address->city = $cidade;
+				$config->address->postal_code = $cep;
+				$config->address->state->name = $estado[0];
+				$config->address->state->sigla = $estado[1];
+
+				if($this->config->setConfig($config)):
+					echo json_encode(['RES' => true, 'MSG' => 'Endereço alterado com sucesso!']);
+				else:
+					echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
+				endif;
+			else:
+				echo json_encode(['RES' => false, 'MSG' => $msg . 'Os seguintes campos estão incorretos: ' . implode(', ', $camposErrados)]);
 			endif;
 		}catch(Exception $e){
 			echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);

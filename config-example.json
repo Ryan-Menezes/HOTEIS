@@ -6,24 +6,24 @@
 		"carrossel": {
 			"imgs": [
 				{
-					"img": "fundo.jpg",
-					"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					"img":"3d61f635fe8131ec721e611e815bdc70.jpg",
+					"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				},
 				{
-					"img": "fundo2.jpg",
-					"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					"img":"f66540ec4c2edd8ffba972e09d2964c5.jpg",
+					"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				},
 				{
-					"img": "fundo3.jpg",
-					"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					"img":"158e613839f696bf6416ab33302243ba.png",
+					"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				}
 			]
 		},
 		"imagens": [
-			"img1.jpg",
-			"img2.jpg",
-			"img3.jpg",
-			"img4.jpg"
+			"e4bad918b0f52de7c628b8e50587e6de.jpg",
+			"10e44867db257c5263fb1cfb1eeff6eb.jpg",
+			"a8d7b275ba8713ad85d88c7edcd7edf6.jpg",
+			"5797a9ab5aef4f8753a1721dbced7780.jpeg"
 		]
 	},
 	"social": {

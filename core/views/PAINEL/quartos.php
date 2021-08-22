@@ -1,4 +1,4 @@
- defer<section class="modal" id="modalDeletaQuarto">
+<section class="modal" id="modalDeletaQuarto">
 	<main class="deletar">
 		<form method="POST" id="formDeleta" action="?a=deleta_quarto">
 			<h4>Opa!, Você realamente deseja deletar este quarto?</h4><br>
