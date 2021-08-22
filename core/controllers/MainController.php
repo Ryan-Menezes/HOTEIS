@@ -3,7 +3,7 @@
 namespace core\controllers;
 
 use core\classes\Store;
-use core\models\Config;
+use core\models\Configuracoes as Config;
 use core\classes\Email;
 
 class MainController{

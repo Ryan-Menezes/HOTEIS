@@ -4,7 +4,7 @@ namespace core\controllers;
 
 use core\classes\Store;
 use core\classes\Email;
-use core\models\Config;
+use core\models\Configuracoes as Config;
 use core\models\Notificacoes;
 use Exception;
 

@@ -1,4 +1,4 @@
- defer<section class="modal" id="modalPayment">
+<section class="modal" id="modalPayment">
 	<main>
 		<header>
 			<h5><?= APP_NAME ?> - Pagamento</h5>

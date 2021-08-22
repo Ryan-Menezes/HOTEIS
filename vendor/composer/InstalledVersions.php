@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '1e2ca8c0962f2a7a62125067cfc9fbdf9cf2911a',
+    'reference' => '42f412564ae429e9e9656cbdc831914346523907',
     'name' => 'rmnc/hoteis',
   ),
   'versions' => 
@@ -67,12 +67,12 @@ private static $installed = array (
     ),
     'phpmailer/phpmailer' => 
     array (
-      'pretty_version' => 'v6.5.0',
-      'version' => '6.5.0.0',
+      'pretty_version' => 'v6.5.1',
+      'version' => '6.5.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'a5b5c43e50b7fba655f793ad27303cd74c57363c',
+      'reference' => 'dd803df5ad7492e1b40637f7ebd258fee5ca7355',
     ),
     'psr/log' => 
     array (
@@ -90,7 +90,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '1e2ca8c0962f2a7a62125067cfc9fbdf9cf2911a',
+      'reference' => '42f412564ae429e9e9656cbdc831914346523907',
     ),
     'setasign/fpdi' => 
     array (
