@@ -6,7 +6,8 @@ define('ERROR_REPORTING', E_ALL);															// APRESENTAÇÃO DE ERROS(PARA 
 
 // URLS
 
-define('URL', 'http://www.hoteis.com/');													// URL DO SISTEMA
+define('INTERNAL_FOLDER', '');																// CASO SEU PROJETO NÃO ESTEJA NA RAIZ DO SERVIDOR, VOCÊ DEVE INFORMAR EM QUAL PASTA ELE SE ENCONTRA
+define('URL', "http://{$_SERVER['HTTP_HOST']}/" . INTERNAL_FOLDER);							// URL DO SISTEMA
 define('URL_HOME', URL);																	// CAMINHO DA PÁGINA HOME
 define('URL_PAINEL', URL_HOME . 'PAINEL/');													// CAMINHO DA PÁGINA DE DASHBOARD DO SISTEMA
 
