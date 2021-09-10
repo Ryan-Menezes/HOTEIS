@@ -512,7 +512,7 @@ class ConfiguracoesController{
 		$msg = 'Não foi possível alterar os dados de contato, ';
 		$camposErrados = array();
 
-		$telefone = strtoupper(trim(addslashes(filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_NUMBER_INT))));
+		$telefone = trim(addslashes(filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_NUMBER_INT)));
 		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
 
 		if(empty($telefone) || !is_numeric($telefone)) array_push($camposErrados, 'TELEFONE');
