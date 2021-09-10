@@ -115,7 +115,7 @@
 	<details>
 		<summary>Site</summary>
 		<article>
-			<main class="containerConf">
+			<main class="containerConf" style="grid-column: 1/3">
 				<header class="headerConf">
 					<h5>Endereço do hotel:</h5>
 				</header>
@@ -126,25 +126,25 @@
 					</div>
 
 					<h5>CEP:</h5>
-					<input type="text" name="cep" id="cep" placeholder="CEP" class="inputsForm" maxlength="8" value="<?= $config->address->postal_code ?>">
+					<input type="text" name="cep" id="cep" placeholder="CEP" class="inputsForm" maxlength="8" value="<?= ADDRESS_POSTAL_CODE ?>">
 					<span class="spanAlerta">Por favor digíte o cep do hotel</span>
 
 					<div class="divide">
 						<div>
 							<h5>Logradouro:</h5>
-							<input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" class="inputsForm" value="<?= $config->address->street ?>">
+							<input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" class="inputsForm" value="<?= ADDRESS_STREET ?>">
 							<span class="spanAlerta">Por favor digíte o logradouro do hotel</span>
 						</div>
 
 						<div>
 							<h5>Número:</h5>
-							<input type="text" name="numero" id="numero" placeholder="Número" class="inputsForm" value="<?= $config->address->number ?>">
+							<input type="text" name="numero" id="numero" placeholder="Número" class="inputsForm" value="<?= ADDRESS_NUMBER ?>">
 							<span class="spanAlerta">Por favor digíte o número do hotel</span>
 						</div>
 					</div>	
 
 					<h5>Bairro:</h5>
-					<input type="text" name="bairro" id="bairro" placeholder="Bairro" class="inputsForm" value="<?= $config->address->district ?>">
+					<input type="text" name="bairro" id="bairro" placeholder="Bairro" class="inputsForm" value="<?= ADDRESS_DISTRICT ?>">
 					<span class="spanAlerta">Por favor digíte o bairro do hotel</span>
 
 					<div class="divide">
@@ -166,6 +166,29 @@
 			</main>
 			<main class="containerConf">
 				<header class="headerConf">
+					<h5>Contato:</h5>
+				</header>
+				<form method="POST" action="?a=alterar_contato" class="formularioExecuta mainConf" data-edit="true">
+					<div class="msg">
+						<p class="textMsg"></p>
+						<p class="btnFechaMsg" onclick="fechaMensagem(this.parentNode)">&times;</p>
+					</div>
+
+					<h5>Telefone:</h5>
+					<input type="text" name="telefone" id="telefone" placeholder="Telefone" class="inputsForm" maxlength="11" value="<?= ADDRESS_PHONE ?>">
+					<span class="spanAlerta">Por favor digíte o telefone de contato</span>
+
+					<h5>E-Mail:</h5>
+					<input type="email" name="email" id="email" placeholder="E-Mail" class="inputsForm" value="<?= ADDRESS_EMAIL ?>">
+					<span class="spanAlerta">Por favor digíte o E-Mail de contato</span>
+					
+					<div class="inp">
+						<input type="submit" value="Salvar Alterações">
+					</div>
+				</form>
+			</main>
+			<main class="containerConf">
+				<header class="headerConf">
 					<h5>Redes Sociais</h5>
 				</header>
 				<form method="POST" action="?a=alterar_redes_sociais" class="formularioExecuta mainConf" data-edit="true">
@@ -175,13 +198,13 @@
 					</div>
 
 					<h5>Facebook:</h5>
-					<input type="url" name="facebook" placeholder="Facebook" value="<?= $config->social->facebook ?>">
+					<input type="url" name="facebook" placeholder="Facebook" value="<?= FACEBOOK ?>">
 
 					<h5>Instagram:</h5>
-					<input type="url" name="instagram" placeholder="Instagram" value="<?= $config->social->instagram ?>">
+					<input type="url" name="instagram" placeholder="Instagram" value="<?= INSTAGRAM ?>">
 
 					<h5>Twitter:</h5>
-					<input type="url" name="twitter" placeholder="Twitter" value="<?= $config->social->twitter ?>">
+					<input type="url" name="twitter" placeholder="Twitter" value="<?= TWITTER ?>">
 					
 					<div class="inp">
 						<input type="submit" value="Salvar Alterações">
@@ -220,7 +243,7 @@
 					</div>
 
 					<h5>Nome do Sistema:</h5>
-					<input type="text" name="nome" class="inputsForm" placeholder="Nome do Site" value="<?= $config->name ?>">
+					<input type="text" name="nome" class="inputsForm" placeholder="Nome do Site" value="<?= APP_NAME ?>">
 					<span class="spanAlerta">Por favor digíte o novo nome do sistema</span>
 					
 					<div class="inp">

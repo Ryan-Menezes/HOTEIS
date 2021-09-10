@@ -494,6 +494,50 @@ class ConfiguracoesController{
 		}
 	}
 
+	public function alterar_contato(){
+		// Verificando se o usuário logado é um administrador
+
+		$dadosUser = Store::dadosUsuarioLogado();
+
+		if($dadosUser['ACESSO'] !== 'A'):
+			Store::redirect(['a' => 'inicio'], PAINEL);
+		endif;
+
+		// Verificando se houve uma requisição POST
+
+		if($_SERVER['REQUEST_METHOD'] !== 'POST'):
+			Store::redirect(['a' => 'inicio'], PAINEL);
+		endif;
+
+		$msg = 'Não foi possível alterar os dados de contato, ';
+		$camposErrados = array();
+
+		$telefone = strtoupper(trim(addslashes(filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_NUMBER_INT))));
+		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
+
+		if(empty($telefone) || !is_numeric($telefone)) array_push($camposErrados, 'TELEFONE');
+		if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) array_push($camposErrados, 'EMAIL');
+
+		try{
+			if(empty($camposErrados)):
+				$config = $this->config->getConfig();
+
+				$config->address->phone = $telefone;
+				$config->address->email = $email;
+
+				if($this->config->setConfig($config)):
+					echo json_encode(['RES' => true, 'MSG' => 'Dados de contato alterados com sucesso!']);
+				else:
+					echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
+				endif;
+			else:
+				echo json_encode(['RES' => false, 'MSG' => $msg . 'Os seguintes campos estão incorretos: ' . implode(', ', $camposErrados)]);
+			endif;
+		}catch(Exception $e){
+			echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro na tentativa de alteração!']);
+		}
+	}
+
 	public function get_payment_config(){
 		// Verificando se houve uma requisição POST
 
