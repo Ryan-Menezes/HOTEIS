@@ -1065,3 +1065,52 @@ html{
 #footer_pagina div p{
 	text-align: center;
 }
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 1125px){
+	#quartos #containerQuartos{
+		grid-template-columns: repeat(3, calc(33.3333333% - 5px));
+	}
+}
+
+@media(max-width: 990px){
+	#principal{
+		grid-template-columns: 1fr;
+	}
+	#principal #menuLateral{
+		position: fixed;
+		top: 0px;
+		left: -280px;
+		z-index: 9999;
+		width: 280px;
+	}
+}
+
+@media(max-width: 900px){
+	#pesquisa{
+		grid-template-columns: 1fr;
+		grid-row-gap: 10px;
+	}
+	#configuracoes .containerConf{
+		grid-column: 1/3;
+	}
+	#configuracoes .containerConf .mainConf .divide{
+		grid-template-columns: 1fr;
+	}
+	#configuracoes .containerConf .mainConf .dividir{
+		grid-template-columns: 1fr;
+	}
+}
+
+@media(max-width: 700px){
+	#quartos #containerQuartos{
+		grid-template-columns: repeat(2, calc(50% - 5px));
+	}
+}
+
+@media(max-width: 450px){
+	#quartos #containerQuartos{
+		grid-template-columns: repeat(1, calc(100% - 5px));
+	}
+}

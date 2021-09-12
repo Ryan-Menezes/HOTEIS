@@ -2,6 +2,7 @@
     "name": "rmnc/hoteis",
     "description": "Sistema hoteleiro online em php",
     "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ryan Menezes",
