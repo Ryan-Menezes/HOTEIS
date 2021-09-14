@@ -6,15 +6,15 @@
 		"carrossel": {
 			"imgs": [
 				{
-					"img":"3d61f635fe8131ec721e611e815bdc70.jpg",
+					"img":"31bc18597130a2b67614903bb975ec1a.jpg",
 					"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				},
 				{
-					"img":"f66540ec4c2edd8ffba972e09d2964c5.jpg",
+					"img":"8941ad47f3c7d342834fb348c6992d92.jpg",
 					"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				},
 				{
-					"img":"158e613839f696bf6416ab33302243ba.png",
+					"img":"3bbdbaa823885099cd47f7ec2676be81.jpg",
 					"text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 				}
 			]

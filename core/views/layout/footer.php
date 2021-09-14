@@ -1,4 +1,11 @@
 <footer id="footer_pagina">
+	<section class="phone">
+		<div>
+			<i class="fas fa-phone-alt"></i>
+			<h2><?= $phone ?></h2>
+			<p>Entre em contato para fazer uma reserva</p>
+		</div>
+	</section>
 	<div class="destaque" id="informacoes">
 		<div>
 			<h4>Redes Socias:</h4>

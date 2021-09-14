@@ -31,7 +31,7 @@
 		</div>
 	</main>
 	<main id="login" class="formulariosSite" data-ajax="false">
-		<div class="formularios backLeft fundo-two">
+		<div class="formularios backLeft">
 			<div class="containerInfomation" id="imgLoginFundo">
 				<img src="../public/assets/IMGS/login.png">
 			</div>
@@ -59,7 +59,7 @@
 	</main>
 
 	<main id="cadastro" class="formulariosSite">
-		<div class="formularios backRight fundo-three" style="grid-template-columns: 1fr 500px;">
+		<div class="formularios backRight inverte-container">
 			<form id="formCad" method="POST" action="?a=cadastro" data-ajax="true">
 				<h3>Cadastrar-se</h3>
 
@@ -107,7 +107,7 @@
 	</main>
 
 	<main id="contatos" class="formulariosSite">
-		<div class="formularios backLeft fundo-one" id="containerForm">
+		<div class="formularios backLeft" id="containerForm">
 			<div id="imgContatoFundo">
 				<img src="../public/assets/IMGS/contato.png">
 			</div>
