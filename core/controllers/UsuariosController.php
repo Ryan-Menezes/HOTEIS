@@ -762,7 +762,9 @@ class UsuariosController{
 					$dados = [
 						'titulo' => 'Gerar nova senha',
 						'curl' => $curl,
-						'hash' => $hash
+						'hash' => $hash,
+						'phone' => Store::mask('(##)#####-####', ADDRESS_PHONE),
+						'postal_code' => Store::mask('#####-###', ADDRESS_POSTAL_CODE)
 					];
 
 					Store::layout([
