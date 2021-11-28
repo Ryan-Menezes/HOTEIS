@@ -33,5 +33,5 @@
 		</div>
 	</div>
 	
-	<div class="destaque"><p><?= APP_NAME ?> - <?= date('Y') ?> | &copy; Todos os direitos reservados</p></div>
+	<div class="destaque"><p><?= APP_NAME ?> &copy; <?= date('Y') ?> Todos os direitos reservados | Site desenvolvido por <a href="https://ryan-menezes.github.io/" target="_blank" title="Portfólio do Desenvolvedor">Ryan Menezes</a></p></div>
 </footer>
