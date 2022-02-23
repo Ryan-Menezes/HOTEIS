@@ -39,10 +39,10 @@ class MainController{
 
 		// Buscando os dados passados pelo form
 
-		$nome = trim(addslashes(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
-		$assunto = trim(addslashes(filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$mensagem = trim(addslashes(filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$nome = trim(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '');
+		$assunto = trim(filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$mensagem = trim(filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		if(empty($nome)) array_push($camposErrados, 'NOME');
 		if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) array_push($camposErrados, 'E-MAIL');

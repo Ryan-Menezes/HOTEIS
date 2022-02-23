@@ -70,11 +70,11 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT));
-		$pesquisa = trim(addslashes(filter_input(INPUT_POST, 'pesquisa', FILTER_SANITIZE_NUMBER_INT)));
-		$status = trim(addslashes(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$data_reserva = trim(addslashes(filter_input(INPUT_POST, 'data_reserva', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$data_encerrar = trim(addslashes(filter_input(INPUT_POST, 'data_encerrar', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$pesquisa = trim(filter_input(INPUT_POST, 'pesquisa', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$data_reserva = trim(filter_input(INPUT_POST, 'data_reserva', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$data_encerrar = trim(filter_input(INPUT_POST, 'data_encerrar', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		if(!is_numeric($min)) $min = 0;
 		if(empty($status)) $status = 'T';
@@ -150,12 +150,12 @@ class ReservasController{
 		$msg = 'Não foi possível editar esta reserva, ';
 		$camposErrados = array();
 
-		$id_reserva = trim(addslashes(filter_input(INPUT_POST, 'id_reserva', FILTER_SANITIZE_NUMBER_INT)));
-		$numero_quarto = trim(addslashes(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT)));
-		$cpf_usuario = trim(addslashes(filter_input(INPUT_POST, 'cpf_usuario', FILTER_SANITIZE_NUMBER_INT)));
-		$data_reserva = trim(addslashes(filter_input(INPUT_POST, 'data_reserva', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$data_encerrar = trim(addslashes(filter_input(INPUT_POST, 'data_encerrar', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$status = trim(addslashes(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$id_reserva = trim(filter_input(INPUT_POST, 'id_reserva', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$numero_quarto = trim(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$cpf_usuario = trim(filter_input(INPUT_POST, 'cpf_usuario', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$data_reserva = trim(filter_input(INPUT_POST, 'data_reserva', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$data_encerrar = trim(filter_input(INPUT_POST, 'data_encerrar', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando todos os campos
 
@@ -214,9 +214,9 @@ class ReservasController{
 
 		$msg = 'Não foi possível enviar sua solicitação, ';
 
-		$numero_quarto = trim(addslashes(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT)));
-		$data_reserva = trim(addslashes(filter_input(INPUT_POST, 'data_reserva', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$data_encerrar = trim(addslashes(filter_input(INPUT_POST, 'data_encerrar', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$numero_quarto = trim(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$data_reserva = trim(filter_input(INPUT_POST, 'data_reserva', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$data_encerrar = trim(filter_input(INPUT_POST, 'data_encerrar', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Verificando se o número do quarto é válido
 
@@ -335,7 +335,7 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT));
+		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		if(!is_numeric($min)) $min = 0;
 
@@ -397,7 +397,7 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT));
+		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		if(!is_numeric($min)) $min = 0;
 
@@ -459,7 +459,7 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$id_pedido_reserva = trim(addslashes(filter_input(INPUT_POST, 'id_pedido_reserva', FILTER_SANITIZE_NUMBER_INT)));
+		$id_pedido_reserva = trim(filter_input(INPUT_POST, 'id_pedido_reserva', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		// Verificando se o id_pedido_reserva é válido
 
@@ -498,7 +498,7 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT));
+		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		if(!is_numeric($min)) $min = 0;
 
@@ -559,15 +559,15 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$id_pedido_reserva = trim(addslashes(filter_input(INPUT_POST, 'id_pedido_reserva', FILTER_SANITIZE_NUMBER_INT)));
-		$status = trim(addslashes(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$id_pedido_reserva = trim(filter_input(INPUT_POST, 'id_pedido_reserva', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando o status
 
 		if(!empty($status)):
 			$evento = ($status == 'A') ? 'aceitar' : 'recusar';
 		else:
-			echo json_encode(['RES' => false, 'MSG' => $msg . 'Ocorreu um erro ao tentar fazer a reserva!']);
+			echo json_encode(['RES' => false, 'MSG' => 'Ocorreu um erro ao tentar fazer a reserva!']);
 			return;
 		endif;
 
@@ -608,7 +608,7 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$id_reserva = trim(addslashes(filter_input(INPUT_POST, 'id_reserva', FILTER_SANITIZE_NUMBER_INT)));		
+		$id_reserva = trim(filter_input(INPUT_POST, 'id_reserva', FILTER_SANITIZE_NUMBER_INT) ?? '');		
 
 		// Verificando se o id_pedido_reserva é válido
 
@@ -647,7 +647,7 @@ class ReservasController{
 
 		// Validando os dados do POST
 
-		$tipo = trim(addslashes(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_NUMBER_INT)));
+		$tipo = trim(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_NUMBER_INT) ?? '');
 		
 		$metodos = ['totalReservasSemana', 'totalReservasMeses', 'totalReservasAnos'];
 

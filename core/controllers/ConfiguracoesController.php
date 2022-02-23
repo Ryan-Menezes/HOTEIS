@@ -60,9 +60,9 @@ class ConfiguracoesController{
 		$msg = 'Não foi possível alterar suas redes sociais, ';
 		$camposErrados = array();
 
-		$facebook = trim(addslashes(filter_input(INPUT_POST, 'facebook', FILTER_SANITIZE_URL)));
-		$instagram = trim(addslashes(filter_input(INPUT_POST, 'instagram', FILTER_SANITIZE_URL)));
-		$twitter = trim(addslashes(filter_input(INPUT_POST, 'twitter', FILTER_SANITIZE_URL)));
+		$facebook = trim(filter_input(INPUT_POST, 'facebook', FILTER_SANITIZE_URL));
+		$instagram = trim(filter_input(INPUT_POST, 'instagram', FILTER_SANITIZE_URL));
+		$twitter = trim(filter_input(INPUT_POST, 'twitter', FILTER_SANITIZE_URL));
 
 		if(!filter_var($facebook, FILTER_VALIDATE_URL)) array_push($camposErrados, 'FACEBOOK');
 		if(!filter_var($instagram, FILTER_VALIDATE_URL)) array_push($camposErrados, 'INSTAGRAM');
@@ -107,7 +107,7 @@ class ConfiguracoesController{
 		$msg = 'Não foi possível alterar o nome do sistema, ';
 		$camposErrados = array();
 
-		$nome = trim(addslashes(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$nome = trim(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS));
 
 		try{
 			$config = $this->config->getConfig();
@@ -455,12 +455,12 @@ class ConfiguracoesController{
 		$msg = 'Não foi possível alterar o endereço, ';
 		$camposErrados = array();
 
-		$cep = trim(addslashes(filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$logradouro = trim(addslashes(filter_input(INPUT_POST, 'logradouro', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$numero = strtoupper(trim(addslashes(filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS))));
-		$bairro = trim(addslashes(filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$cidade = trim(addslashes(filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$estado = explode('-', trim(addslashes(filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_SPECIAL_CHARS))));
+		$cep = trim(filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS));
+		$logradouro = trim(filter_input(INPUT_POST, 'logradouro', FILTER_SANITIZE_SPECIAL_CHARS));
+		$numero = strtoupper(trim(filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$bairro = trim(filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS));
+		$cidade = trim(filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_SPECIAL_CHARS));
+		$estado = explode('-', trim(filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_SPECIAL_CHARS)));
 
 		if(strlen($cep) !== 8) array_push($camposErrados, 'CEP');
 		if(empty($logradouro)) array_push($camposErrados, 'LOGRADOURO');
@@ -512,8 +512,8 @@ class ConfiguracoesController{
 		$msg = 'Não foi possível alterar os dados de contato, ';
 		$camposErrados = array();
 
-		$telefone = trim(addslashes(filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_NUMBER_INT)));
-		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
+		$telefone = trim(filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_NUMBER_INT));
+		$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
 
 		if(empty($telefone) || !is_numeric($telefone)) array_push($camposErrados, 'TELEFONE');
 		if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) array_push($camposErrados, 'EMAIL');
@@ -549,6 +549,6 @@ class ConfiguracoesController{
 
 		$config->payment->mode = PAYMENT_MODE;
 		
-		echo json_encode($config->payment);	
+		echo json_encode($config->payment);
 	}
 }

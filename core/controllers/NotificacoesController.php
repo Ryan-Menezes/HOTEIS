@@ -28,7 +28,7 @@ class NotificacoesController{
 
 		// Validando os dados do POST
 
-		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT));
+		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT) ?? '');
 		$html = '';
 
 		if(!is_numeric($min)) $min = 0;
@@ -72,7 +72,7 @@ class NotificacoesController{
 
 		// Validando os dados do POST
 
-		$id_not = trim(filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT));
+		$id_not = trim(filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT) ?? '');
 		
 		if($this->notificacoes->existeNotificacao($dadosUsuario['CPF'], $id_not) && !$this->notificacoes->notificacaoVisualizada($id_not)):
 			echo (int)$this->notificacoes->visualizaNotificacao($dadosUsuario['CPF'], $id_not);
@@ -94,7 +94,7 @@ class NotificacoesController{
 
 		// Validando os dados do POST
 
-		$id_not = trim(filter_input(INPUT_POST, 'id_not', FILTER_SANITIZE_NUMBER_INT));
+		$id_not = trim(filter_input(INPUT_POST, 'id_not', FILTER_SANITIZE_NUMBER_INT) ?? '');
 		
 		if($this->notificacoes->existeNotificacao($dadosUsuario['CPF'], $id_not)):
 			if($this->notificacoes->deletaNotificacao($dadosUsuario['CPF'], $id_not)):

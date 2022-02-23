@@ -13,7 +13,7 @@ define('URL_PAINEL', URL_HOME . 'PAINEL/');													// CAMINHO DA PÁGINA DE
 
 // CONFIGURAÇÕES DO SISTEMA
 
-define('CONFIGJSON', 'config.json');														// ARQUIVO DE CONFIGURAÇÕES(.json) CONTENDO MAIS ALGUMAS INFORMAÇÕES DO SISTEMA
+define('CONFIGJSON', '../config.json');														// ARQUIVO DE CONFIGURAÇÕES(.json) CONTENDO MAIS ALGUMAS INFORMAÇÕES DO SISTEMA
 
 $CONFIG = json_decode(file_get_contents(URL . CONFIGJSON));
 
@@ -66,9 +66,9 @@ define('MAX_FILE_SIZE', '1048576');
 
 // CONFIGURAÇÕES DO CHECKOUT SEGURO DO PAYPAL
 
-define('MODE', 'sandbox'); 																	// MODO DE PAGAMENTO DO PAYPAL(sandbox - somente para testes | live - para pagamentos reais)
+define('PAYMENT_MODE', 'sandbox'); 															// MODO DE PAGAMENTO DO PAYPAL(sandbox - somente para testes | live - para pagamentos reais)
 
-if(MODE === 'sandbox'):
+if(PAYMENT_MODE === 'sandbox'):
 	define('PAYMENT_URL', 'https://api-m.sandbox.paypal.com/');								// URL ONDE SERÁ FEITA TODAS AS REQUISIÇÕES SSL PARA A API DO PAYPAL NO MODO sandbox
 	define('PAYMENT_CLIENTID', '');															// ESTE ID É FORNECIDO PELO PAYPAL PARA O MODO sandbox
 	define('PAYMENT_SECRETKEY', '');														// ESTA CHAVE É FORNECIDA PELO PAYPAL PARA O MODO sandbox

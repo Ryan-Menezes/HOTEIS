@@ -59,12 +59,12 @@ class UsuariosController{
 
 		// Buscando os dados passados pelo form
 
-		$cpf = trim(addslashes(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT)));
-		$nome = trim(addslashes(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$sobrenome = trim(addslashes(filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
-		$senha = trim(addslashes(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$rsenha = trim(addslashes(filter_input(INPUT_POST, 'rsenha', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$cpf = trim(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$nome = trim(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$sobrenome = trim(filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '');
+		$senha = trim(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$rsenha = trim(filter_input(INPUT_POST, 'rsenha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando os dados passados
 
@@ -124,7 +124,7 @@ class UsuariosController{
 			Store::redirect(['a' => 'inicio']);
 		endif;
 
-		$curl = trim(filter_input(INPUT_GET, 'c', FILTER_SANITIZE_SPECIAL_CHARS));
+		$curl = trim(filter_input(INPUT_GET, 'c', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		if($this->usuarios->curlExiste($curl)):
 			$this->usuarios = new Usuarios();
@@ -156,8 +156,8 @@ class UsuariosController{
 			Store::redirect(['a' => 'inicio']);
 		endif;
 
-		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
-		$senha = trim(addslashes(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '');
+		$senha = trim(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando o login
 
@@ -196,11 +196,11 @@ class UsuariosController{
 
 		// Validando os dados do POST
 
-		$conta = trim(filter_input(INPUT_POST, 'conta', FILTER_SANITIZE_SPECIAL_CHARS));
-		$acesso = trim(filter_input(INPUT_POST, 'acesso', FILTER_SANITIZE_SPECIAL_CHARS));
-		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS));
-		$pesquisa = trim(filter_input(INPUT_POST, 'pesquisa', FILTER_SANITIZE_SPECIAL_CHARS));
-		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT));
+		$conta = trim(filter_input(INPUT_POST, 'conta', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$acesso = trim(filter_input(INPUT_POST, 'acesso', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$pesquisa = trim(filter_input(INPUT_POST, 'pesquisa', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		if(empty($acesso)) $acesso = 'T';
 		if(empty($status)) $status = 'T';
@@ -289,15 +289,15 @@ class UsuariosController{
 
 		// Buscando os dados passados pelo form
 
-		$cpf = trim(addslashes(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT)));
-		$cpf_antigo = trim(addslashes(filter_input(INPUT_POST, 'cpf_antigo', FILTER_SANITIZE_NUMBER_INT)));
-		$nome = trim(addslashes(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$sobrenome = trim(addslashes(filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
-		$email_antigo = trim(addslashes(filter_input(INPUT_POST, 'email_antigo', FILTER_SANITIZE_EMAIL)));
-		$status = trim(addslashes(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$acesso = trim(addslashes(filter_input(INPUT_POST, 'acesso', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$ativo = trim(addslashes(filter_input(INPUT_POST, 'ativo', FILTER_SANITIZE_NUMBER_INT)));
+		$cpf = trim(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$cpf_antigo = trim(filter_input(INPUT_POST, 'cpf_antigo', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$nome = trim(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$sobrenome = trim(filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '');
+		$email_antigo = trim(filter_input(INPUT_POST, 'email_antigo', FILTER_SANITIZE_EMAIL) ?? '');
+		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$acesso = trim(filter_input(INPUT_POST, 'acesso', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$ativo = trim(filter_input(INPUT_POST, 'ativo', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		// Validando os dados passados
 
@@ -361,10 +361,10 @@ class UsuariosController{
 
 		// Buscando os dados passados pelo form
 
-		$cpf = trim(addslashes(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT)));
-		$nome = trim(addslashes(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$sobrenome = trim(addslashes(filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
+		$cpf = trim(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$nome = trim(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$sobrenome = trim(filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '');
 
 		// Validando os dados passados
 
@@ -428,9 +428,9 @@ class UsuariosController{
 
 		// Buscando os dados passados pelo form
 
-		$senha = trim(addslashes(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$nsenha = trim(addslashes(filter_input(INPUT_POST, 'nsenha', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$rnsenha = trim(addslashes(filter_input(INPUT_POST, 'rnsenha', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$senha = trim(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$nsenha = trim(filter_input(INPUT_POST, 'nsenha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$rnsenha = trim(filter_input(INPUT_POST, 'rnsenha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando a senha atual
 
@@ -564,7 +564,7 @@ class UsuariosController{
 
 		// Validando os dados do POST
 
-		$cpf = trim(addslashes(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT)));
+		$cpf = trim(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		// Impedindo que o usuário logado edite seus dados
 
@@ -625,7 +625,7 @@ class UsuariosController{
 
 		// Validando os dados do POST
 
-		$cpf = trim(addslashes(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT)));
+		$cpf = trim(filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		// Verificando se o cpf é válido
 
@@ -669,7 +669,7 @@ class UsuariosController{
 
 		// Validando os dados do POST
 
-		$senha = trim(addslashes(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$senha = trim(filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando a senha e deletando a conta
 
@@ -718,7 +718,7 @@ class UsuariosController{
 
 		// Validando os dados do POST
 
-		$email = trim(addslashes(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
+		$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '');
 
 		// Verificando se o E-Mail foi preenchido
 
@@ -749,8 +749,8 @@ class UsuariosController{
 			Store::redirect(['a' => 'inicio']);
 		endif;
 
-		$curl = trim(addslashes(filter_input(INPUT_GET, 'c', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$hash = trim(addslashes(filter_input(INPUT_GET, 'h', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$curl = trim(filter_input(INPUT_GET, 'c', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$hash = trim(filter_input(INPUT_GET, 'h', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		if(!empty($curl) && !empty($hash)):
 			$usuario = $this->usuarios->buscaUsuarioPorCurl($curl);
@@ -799,11 +799,11 @@ class UsuariosController{
 
 		// Buscando os dados passados pelo form
 
-		$nsenha = trim(addslashes(filter_input(INPUT_POST, 'nsenha', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$rnsenha = trim(addslashes(filter_input(INPUT_POST, 'rnsenha', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$nsenha = trim(filter_input(INPUT_POST, 'nsenha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$rnsenha = trim(filter_input(INPUT_POST, 'rnsenha', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
-		$curl = trim(addslashes(filter_input(INPUT_POST, 'c', FILTER_SANITIZE_SPECIAL_CHARS)));
-		$hash = trim(addslashes(filter_input(INPUT_POST, 'h', FILTER_SANITIZE_SPECIAL_CHARS)));
+		$curl = trim(filter_input(INPUT_POST, 'c', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$hash = trim(filter_input(INPUT_POST, 'h', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		if(!empty($curl) && !empty($hash)):
 			$usuario = $this->usuarios->buscaUsuarioPorCurl($curl);

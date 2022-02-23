@@ -11,7 +11,7 @@ define('ROTAS', [
 	'alterar_senha_recupera' 	=> 'usuarios@alterar_senha_recupera'
 ]);
 
-$acao = trim(filter_input(INPUT_GET, 'a', FILTER_SANITIZE_SPECIAL_CHARS));
+$acao = trim(filter_input(INPUT_GET, 'a', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 if(!array_key_exists($acao, ROTAS)) $acao = 'inicio';
 

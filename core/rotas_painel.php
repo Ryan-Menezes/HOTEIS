@@ -70,7 +70,7 @@ define('ROTAS', [
 	'logout'							=> 'painel@logout'
 ]);
 
-$acao = trim(filter_input(INPUT_GET, 'a', FILTER_SANITIZE_SPECIAL_CHARS));
+$acao = trim(filter_input(INPUT_GET, 'a', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 if(!array_key_exists($acao, ROTAS)) $acao = 'inicio';
 

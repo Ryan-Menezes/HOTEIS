@@ -123,10 +123,10 @@ class QuartosController{
 
 		// Validando os dados do POST
 
-		$tipo = trim(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS));
-		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS));
-		$numero = trim(filter_input(INPUT_POST, 'pesquisa', FILTER_SANITIZE_NUMBER_INT));
-		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT));
+		$tipo = trim(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$numero = trim(filter_input(INPUT_POST, 'pesquisa', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$min = trim(filter_input(INPUT_POST, 'min', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		if(empty($tipo)) $tipo = 'T';
 		if(empty($status)) $status = 'T';
@@ -201,10 +201,10 @@ class QuartosController{
 
 		// Buscando os dados passados pelo form
 
-		$tipo = trim(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS));
-		$numero = trim(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT));
-		$andar = trim(filter_input(INPUT_POST, 'andar', FILTER_SANITIZE_NUMBER_INT));
-		$preco = trim(filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_SPECIAL_CHARS));
+		$tipo = trim(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$numero = trim(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$andar = trim(filter_input(INPUT_POST, 'andar', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$preco = trim(filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando os dados passados
 
@@ -250,12 +250,12 @@ class QuartosController{
 
 		// Buscando os dados passados pelo form
 
-		$tipo = trim(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS));
-		$numero_antigo = trim(filter_input(INPUT_POST, 'numero_antigo', FILTER_SANITIZE_NUMBER_INT));
-		$numero_atualizado = trim(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT));
-		$andar = trim(filter_input(INPUT_POST, 'andar', FILTER_SANITIZE_NUMBER_INT));
-		$preco = trim(filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_SPECIAL_CHARS));
-		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS));
+		$tipo = trim(filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$numero_antigo = trim(filter_input(INPUT_POST, 'numero_antigo', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$numero_atualizado = trim(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$andar = trim(filter_input(INPUT_POST, 'andar', FILTER_SANITIZE_NUMBER_INT) ?? '');
+		$preco = trim(filter_input(INPUT_POST, 'preco', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+		$status = trim(filter_input(INPUT_POST, 'status', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
 
 		// Validando o númro angigo do quarto
 
@@ -307,7 +307,7 @@ class QuartosController{
 
 		// Validando os dados do POST
 
-		$numero_quarto = trim(addslashes(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT)));
+		$numero_quarto = trim(filter_input(INPUT_POST, 'numero_quarto', FILTER_SANITIZE_NUMBER_INT) ?? '');
 
 		// Verificando se o numero do quarto é válido
 

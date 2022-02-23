@@ -87,7 +87,7 @@ class Database{
 		self::conectar();
 
 		if(!is_null(self::$conexao)):
-			self::$conexao->beginTransaction();
+			//self::$conexao->beginTransaction();
 
 			try{
 				$comando = self::$conexao->prepare($sql);
@@ -95,12 +95,12 @@ class Database{
 				if(is_array($parametros) && !empty($parametros)) $comando->execute($parametros);
 				else $comando->execute();
 
-				self::$conexao->commit();
+				//self::$conexao->commit();
 				self::desconectar();
 
 				return $comando->fetchAll();
 			}catch(PDOException $e){
-				self::$conexao->rollBack();
+				//self::$conexao->rollBack();
 				self::desconectar();
 
 				return array();
